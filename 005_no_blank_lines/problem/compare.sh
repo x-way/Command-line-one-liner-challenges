@@ -1,7 +1,7 @@
 #!/bin/sh
 
 convert() {
-  cat "$@"
+  cat "$@"|sed '/^$/d'
 }
 
 convert input.txt > actual.txt
