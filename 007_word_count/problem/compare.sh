@@ -1,7 +1,7 @@
 #!/bin/sh
 
 convert() {
-  cat "$@"
+  cat "$@"|tr -C '[:alpha:]' '\n'|egrep -i '^the$'|wc -l
 }
 
 convert input.txt > actual.txt
