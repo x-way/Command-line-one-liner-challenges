@@ -1,10 +1,10 @@
 #!/bin/sh
 
 convert() {
-  cat "$@"
+  cat "$@"|sort|uniq -u
 }
 
-convert input.txt > actual.txt
+convert input1.txt input2.txt input2.txt > actual.txt
 
 ${DIFF:-diff -q} actual.txt expected.txt
 
