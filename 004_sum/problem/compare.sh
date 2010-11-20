@@ -1,7 +1,7 @@
 #!/bin/sh
 
 convert() {
-  cat "$@"
+  cat "$@"|awk '{s+=$1}END{print s}'
 }
 
 convert input.txt > actual.txt
