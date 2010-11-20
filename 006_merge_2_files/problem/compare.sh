@@ -1,7 +1,7 @@
 #!/bin/sh
 
 convert() {
-  cat "$@"
+  paste -d , "$@"
 }
 
 convert input1.txt input2.txt > actual.txt
