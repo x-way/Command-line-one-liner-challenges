@@ -1,7 +1,7 @@
 #!/bin/sh
 
 convert() {
-  cat "$@"
+  cat "$@"|iconv -f utf-8 -t ascii//translit
 }
 
 convert input.txt > actual.txt
